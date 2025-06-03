@@ -350,7 +350,110 @@
             gap: 0.5rem;
         }
 
-        /* Portfolio Section */
+        /* Featured Example Section */
+        .featured-example {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid #32ff32;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(50, 255, 50, 0.1);
+        }
+
+        .example-showcase {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .example-preview {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .example-screenshot {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid #32ff32;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .example-preview:hover .example-screenshot {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(50, 255, 50, 0.2);
+        }
+
+        .click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .example-preview:hover .click-overlay {
+            opacity: 1;
+        }
+
+        .click-overlay span {
+            color: #32ff32;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid #32ff32;
+            border-radius: 8px;
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .example-info h4 {
+            color: #32ff32;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .example-info p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .example-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #32ff32, #28cc28);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .example-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(50, 255, 50, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .example-showcase {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .example-preview iframe {
+                height: 300px;
+            }
+        }
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -706,6 +809,34 @@
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Portfolio</h2>
+            
+            <!-- Featured Example Site -->
+            <div class="featured-example">
+                <h3 style="color: #32ff32; text-align: center; margin-bottom: 1rem; font-size: 1.5rem;">🎯 Live Example Site</h3>
+                <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Check out this demo site I built — it's fully functional and shows exactly what you'll get:</p>
+                <div class="example-showcase">
+                    <div class="example-preview">
+                        <img src="IMG_2117.jpeg" 
+                             alt="Pete's P&P Website Example" 
+                             class="example-screenshot"
+                             onclick="window.open('https://ryand40.github.io/Example-website/?name=Ryan+Drewniak&email=123%40gmail.com&service=Plumbing+Emergency&message=Rheh', '_blank')">
+                        <div class="click-overlay">
+                            <span>Click to view live site</span>
+                        </div>
+                    </div>
+                    <div class="example-info">
+                        <h4>Professional Service Website - "Pete's P&P"</h4>
+                        <p>This is a real, working example of what your business site could look like. Notice the clean design, working contact form, and mobile-friendly layout perfect for service businesses.</p>
+                        <a href="https://ryand40.github.io/Example-website/?name=Ryan+Drewniak&email=123%40gmail.com&service=Plumbing+Emergency&message=Rheh" 
+                           target="_blank" 
+                           class="example-link">
+                           View Live Site →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: #32ff32; text-align: center; margin: 3rem 0 2rem 0; font-size: 1.3rem;">More Examples</h3>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-preview">🏢</div>
